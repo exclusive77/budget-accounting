@@ -1,0 +1,88 @@
+﻿<Controls:MetroWindow x:Class="Exzam_rashod.costs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:local="clr-namespace:Exzam_rashod"
+                      
+        mc:Ignorable="d"
+          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"                
+        Title="Учет расходов" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38*"></RowDefinition>
+            <RowDefinition Height="55*"></RowDefinition>
+            <RowDefinition Height="47*"></RowDefinition>
+            <RowDefinition Height="46*"></RowDefinition>
+            <RowDefinition Height="47*"></RowDefinition>
+            <RowDefinition Height="46*"></RowDefinition>
+            <RowDefinition Height="47*"></RowDefinition>
+            <RowDefinition Height="46*"></RowDefinition>
+            <RowDefinition Height="47*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Width="653"  >
+            <TextBox   >Пользователь :</TextBox>
+            <TextBox Name="TB_user"    ></TextBox>
+            <TextBlock Name="t_balans" HorizontalAlignment="Center"></TextBlock>
+
+            <Menu Height="30" VerticalAlignment="Top">
+                <MenuItem Header="Редактировать">
+                    <MenuItem Header="Добавить статью расходов" Click="Add_Click"></MenuItem>
+                    <MenuItem Header="Редактировать расходы" Click="UpdateProd_Click"  ></MenuItem>
+                    <MenuItem Header="Удалить статью расходов" Click="Del_Click"></MenuItem>
+
+
+                </MenuItem>
+
+
+
+
+
+
+                <MenuItem Header="Поиск" RenderTransformOrigin="0.519,0.8" Height="30" Width="96">
+                    <MenuItem Header="Поиск расходов в заданном периоде" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Поиск по типу расхода" Click="MenuItem_Click_2" ></MenuItem>
+                    <MenuItem Header="Поиск по сумме расхода" Click="MenuItem_Click_4"></MenuItem>
+
+                    <Separator />
+                    <MenuItem Header="Показать все"  Click="MenuItem_Click_1"></MenuItem>
+                </MenuItem>
+
+            </Menu>
+            <Button Name="Bt_add"  Margin="50,5,5,5" Click="Add_Click">Добавить расход</Button>
+        </StackPanel>
+
+        <ListView x:Name="ProdLb" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="6" Margin="10,0,0,0"   Background="#FFF0E8E7">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ID}" Width="50">ID</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=consumption_name}"  Width="300" >Тип расхода</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Width="100">Сумма</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateTime_}" Width="150">Дата</GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+
+                    <MenuItem Header="Редактировать " Click="update_con"></MenuItem>
+                    <MenuItem Header="Удалить" Click="dell_cont_Click"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+
+        <TextBox  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="5,5,158,5">Общая сумма расходов за период :</TextBox>
+        <TextBox  Name="TB_sum" Grid.Column="2"  Grid.Row="7" Margin="5,5,0,5" Grid.ColumnSpan="2">0</TextBox>
+        <TextBox  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="8" Margin="5,5,158,5">Максимальное значение за период :</TextBox>
+        <TextBox  Name="TB_Max" Grid.Column="2"  Grid.Row="8" Margin="5,5,0,5" Grid.ColumnSpan="2">0</TextBox>
+
+    </Grid>
+    
+</Controls:MetroWindow>

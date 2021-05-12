@@ -1,0 +1,20 @@
+﻿<Controls:MetroWindow  x:Class="Exzam_rashod.Find_Price"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exzam_rashod"
+           xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"               
+        mc:Ignorable="d"
+           Title="Поиск расходов по сумме расхода в заданном диапазоне" Height="450" Width="550">
+    <StackPanel Margin="5,5,-22,5">
+        <TextBlock FontSize="18" Margin = "5,5,5,5" >Поиск расходов по сумме расхода в заданном диапазоне</TextBlock>
+        <TextBlock FontSize="18" Margin = "5,5,5,5">Минимальный расход</TextBlock>
+        <TextBox Name="TB_Мin_price"  FontSize="18" Margin = "5,5,5,5"></TextBox>
+        <TextBlock FontSize="18" Margin = "5,5,5,5">Мaксимальный расход</TextBlock>
+        <TextBox Name="TB_Max_price"  FontSize="18" Margin = "5,5,5,5"></TextBox>
+        <Button Click="Button_Click" Margin="5,5,5,5" >Начать поиск</Button>
+
+
+    </StackPanel>
+    </Controls:MetroWindow >

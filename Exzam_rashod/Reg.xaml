@@ -1,0 +1,24 @@
+﻿
+<Controls:MetroWindow x:Class="Exzam_rashod.Reg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exzam_rashod"
+                xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"              
+        mc:Ignorable="d"
+        Title="Регистрация" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Margin="10,10,10,10" >Имя</TextBlock>
+            <TextBox Name="TB_Firstname"  Margin="10,10,10,10"   ></TextBox>
+            <TextBlock Margin="10,10,10,10" >Фамилия</TextBlock>
+            <TextBox Name="TB_Lastname"  Margin="10,10,10,10"   ></TextBox>
+            <TextBlock Margin="10,10,10,10" >Логин</TextBlock>
+            <TextBox Name="TB_login1"  Margin="10,10,10,10"   ></TextBox>
+            <TextBlock Margin="10,10,10,10" >Пароль</TextBlock>
+            <TextBox Name="TB_pass1"  Margin="10,10,10,10"   ></TextBox>
+            <Button Name="Bt_regist" Margin="10,10,10,10" Click="Bt_regist_Click">Зарегистировать</Button>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>
